@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 TOKEN = os.environ.get('BOT_TOKEN', '7799784006:AAE8qfnrz35poUJilU0_0gNONcylwqsKe7c')
 PRIMARY_CHANNEL_ID = os.environ.get('PRIMARY_CHANNEL_ID', '-1001805753779')
 SECONDARY_CHANNEL_ID = os.environ.get('SECONDARY_CHANNEL_ID', '-1002505814673')
-KEYWORDS = ['infortunio', 'infortuni', 'assenza', 'assenze', 'rottura', 'acquisto', 'cessione', 'rinforzo', 'affrettare', 'problemi', 'giornata di', 'padroni di casa', 'è stato']
+KEYWORDS = ['infortunio', 'infortuni', 'assenza', 'assenze', 'rottura', 'acquisto', 'cessione', 'rinforzo', 'problemi', 'problemi muscolari', 'acchiacchi', 'acciaccati', 'fermo ai box', 'fermo a causa']
 
 # Headers for web requests to mimic a browser
 HEADERS = {
