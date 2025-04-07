@@ -220,6 +220,6 @@ if __name__ == '__main__':
     # Log startup
     logger.info("Bot started. Listening for channel posts...")
     
-    # Start the bot with simplified polling approach and delete any existing webhook
-    app.run_polling(allowed_updates=["channel_post"], drop_pending_updates=True, close_loop=False, webhook_info=None)
+    # Start the bot with simplified polling approach
+    app.run_polling(allowed_updates=["channel_post"], drop_pending_updates=True, close_loop=False)
 
