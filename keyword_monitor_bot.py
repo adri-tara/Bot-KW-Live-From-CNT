@@ -221,7 +221,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
             logger.info("Webhook deleted successfully from error handler")
         except Exception as e:
             logger.error(f"Failed to delete webhook from error handler: {e}")
-
+            
 async def main():
     # Create the application
     app = Application.builder().token(TOKEN).build()
@@ -256,4 +256,5 @@ async def main():
 if __name__ == '__main__':
     import asyncio
     asyncio.run(main())
+
 
