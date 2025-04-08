@@ -210,9 +210,12 @@ async def handle_channel_post(update: Update, context: ContextTypes.DEFAULT_TYPE
             except Exception as e:
                 logger.error(f"Error sending notification: {e}")
 
-if __name__ == '__main__':
+async def main():
     # Create the application
     app = Application.builder().token(TOKEN).build()
+    
+    # Delete any existing webhook before starting
+    await app.bot.delete_webhook()
     
     # Add handler for channel posts
     app.add_handler(MessageHandler(filters.ChatType.CHANNEL, handle_channel_post))
@@ -220,6 +223,9 @@ if __name__ == '__main__':
     # Log startup
     logger.info("Bot started. Listening for channel posts...")
     
-    # Start the bot with simplified polling approach
-    app.run_polling(allowed_updates=["channel_post"], drop_pending_updates=True, close_loop=False)
+    # Start the bot with polling
+    await app.run_polling(allowed_updates=["channel_post"], drop_pending_updates=True)
 
+if __name__ == '__main__':
+    import asyncio
+    asyncio.run(main())
