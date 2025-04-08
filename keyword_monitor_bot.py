@@ -255,6 +255,11 @@ async def main():
 
 if __name__ == '__main__':
     import asyncio
+    import nest_asyncio
+    
+    # Apply nest_asyncio patch to allow nested event loops
+    nest_asyncio.apply()
+    
     try:
         asyncio.run(main())
     except RuntimeError as e:
@@ -264,5 +269,3 @@ if __name__ == '__main__':
             loop.run_until_complete(main())
         else:
             raise
-
-
