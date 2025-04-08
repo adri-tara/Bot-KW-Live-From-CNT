@@ -210,15 +210,41 @@ async def handle_channel_post(update: Update, context: ContextTypes.DEFAULT_TYPE
             except Exception as e:
                 logger.error(f"Error sending notification: {e}")
 
+async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Log errors caused by updates."""
+    logger.error(f"Update {update} caused error: {context.error}")
+    if isinstance(context.error, telegram.error.Conflict):
+        logger.info("Webhook conflict detected, attempting to delete webhook again...")
+        try:
+            await context.application.bot.delete_webhook()
+            logger.info("Webhook deleted successfully from error handler")
+        except Exception as e:
+            logger.error(f"Failed to delete webhook from error handler: {e}")
+
 async def main():
     # Create the application
     app = Application.builder().token(TOKEN).build()
     
-    # Delete any existing webhook before starting
-    await app.bot.delete_webhook()
+    # Delete any existing webhook before starting with error handling
+    try:
+        logger.info("Attempting to delete webhook...")
+        await app.bot.delete_webhook(drop_pending_updates=True)
+        logger.info("Successfully deleted webhook")
+    except Exception as e:
+        logger.error(f"Error deleting webhook: {e}")
+        # Wait a moment and try again
+        await asyncio.sleep(2)
+        try:
+            await app.bot.delete_webhook(drop_pending_updates=True)
+            logger.info("Successfully deleted webhook on second attempt")
+        except Exception as e2:
+            logger.error(f"Failed to delete webhook on second attempt: {e2}")
     
     # Add handler for channel posts
     app.add_handler(MessageHandler(filters.ChatType.CHANNEL, handle_channel_post))
+    
+    # Add error handler
+    app.add_error_handler(error_handler)
     
     # Log startup
     logger.info("Bot started. Listening for channel posts...")
@@ -229,3 +255,4 @@ async def main():
 if __name__ == '__main__':
     import asyncio
     asyncio.run(main())
+
