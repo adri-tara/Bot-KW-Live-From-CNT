@@ -7,6 +7,7 @@ import html
 from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram import error as tg_error
 
 # Configure logging
 logging.basicConfig(
@@ -213,7 +214,7 @@ async def handle_channel_post(update: Update, context: ContextTypes.DEFAULT_TYPE
 async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Log errors caused by updates."""
     logger.error(f"Update {update} caused error: {context.error}")
-    if isinstance(context.error, telegram.error.Conflict):
+    if isinstance(context.error, tg_error.Conflict):
         logger.info("Webhook conflict detected, attempting to delete webhook again...")
         try:
             await context.application.bot.delete_webhook()
