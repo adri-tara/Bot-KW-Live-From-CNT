@@ -20,83 +20,63 @@ TOKEN = os.environ.get('BOT_TOKEN', '7799784006:AAE8qfnrz35poUJilU0_0gNONcylwqsK
 PRIMARY_CHANNEL_ID = os.environ.get('PRIMARY_CHANNEL_ID', '-1001805753779')
 SECONDARY_CHANNEL_ID = os.environ.get('SECONDARY_CHANNEL_ID', '-1002505814673')
 KEYWORDS = [
-    # Infortuni e problemi fisici
-    'infortunio', 'infortuni', 
+    # Termini Chiave per Assenza/Infortunio
+    'assente', 'assenti',
+    'assenza', 'assenze',
+    'infortunio', 'infortuni',
+    'indisponibile', 'indisponibili',
+    'non disponibile', 'non disponibili',
+    'fuori',             # Molto comune e diretto (es. "Rossi fuori per la caviglia")
+    'out',              # Equivalente inglese, molto usato
+    'ko',               # Gergo comune per indicare fuori gioco
+    
+    # Problemi Fisici Specifici (che spesso implicano assenza)
     'lesione', 'lesioni',
     'distorsione', 'distorsioni',
     'stiramento', 'stiramenti',
     'contrattura', 'contratture',
-    'elongazione',
-    'affaticamento', 'affaticamenti',
+    'problemi muscolari', # Mantenuto perché specifico
+    'rottura',
     'trauma', 'traumi',
-    'contusione', 'contusioni',
-    'rottura', 
-    'problemi', # Mantenuto, ma potrebbe essere generico
-    'problemi muscolari', 
-    'fastidio', 'fastidi',
     'acciacco', 'acchiacchi', 
     'acciaccato', 'acciaccati',
-    'acciaccatura', 'acciaccature',
-    'malanno', 'malanni',
+    'fastidio', # Mantenuto con cautela, spesso indica dubbio/assenza
 
-    # Assenza e indisponibilità
-    'assenza', 'assenze', 
-    'assente', 'assenti',
-    'indisponibile', 'indisponibili',
-    'non disponibile', 'non disponibili',
-    'fuori causa',
-    'fermo ai box', 
-    'fermo a causa',
-    'ai box',
-    'stop', # Aggiunto come termine generico per fermo
-    'costretto allo stop', 'costretto a fermarsi',
+    # Stato di Fermo / Stop
+    'fermo',            # Più generico ma diretto (es. "fermo per un problema al...")
+    'stop',             # Molto comune (es. "stop di due settimane")
+    'ai box',           # Comune nel gergo (include "fermo ai box")
 
-    # Stato incerto / dubbio
+    # Stato di Dubbio (Importante per previsioni)
     'in dubbio',
     'in forte dubbio',
-    'a rischio',
-    'valutato giorno per giorno', 'valutazione quotidiana',
-    'monitorato',
-    'non al meglio',
-    'condizione precaria',
+    'a rischio',        # Spesso usato per "a rischio forfait" o "a rischio per la partita"
+    'non al meglio',    # Implica possibile assenza o prestazione limitata
 
-    # Verbi / Azioni di assenza
-    'saltare la partita', 'salta la partita', 'salterà la partita',
-    'mancare', 'mancherà', 'è mancato',
-    'fermarsi', 'si è fermato', 
-    'non sarà della partita',
-    'non prenderà parte',
-    'restare fuori',
-    
-    # Termini medici / Recupero
-    'operazione', 'intervento chirurgico',
-    'terapia', 'terapie',
-    'riabilitazione',
-    'recupero', 'tempi di recupero',
-    'visita medica', 'esami strumentali', 
+    # Verbi Indicanti Assenza (Potenziati)
+    'salta', 'salterà', 'saltare',         # Es. "salta la partita", "costretto a saltare"
+    'manca', 'mancherà', 'mancare',       # Es. "mancherà alla squadra"
+    'fermarsi', 'si ferma', 'si è fermato', # Spesso usato per infortuni in allenamento/partita
+    'non gioca', 'non giocherà',          # Diretto e inequivocabile
+    'non sarà', 'non ci sarà',          # Es. "non sarà della partita" / "non ci sarà contro X"
+    'resta fuori', 'restare fuori',
+    'dare forfait', 'forfait',          # Termine specifico per rinuncia/assenza
 
-    # Altre cause di assenza
-    'influenza', 'stato influenzale',
-    'febbre',
-    'malattia',
-    'indisposizione',
-    'motivi personali', 'ragioni familiari',
+    # Altre Cause Dirette di Assenza
     'squalifica', 'squalificato',
-    'riposo', 'a riposo',
-    'turnover',
-    'scelta tecnica', 
-    'non convocato', 'escluso dai convocati',
+    'influenza', 'influenzato', 'febbre',
+    'malattia',
+    # 'motivi personali' / 'ragioni familiari' (Valuta tu se includerli, sono assenze ma non fisiche)
+    # 'scelta tecnica' / 'non convocato' (Idem, indicano assenza ma non per problemi fisici)
 
-    # Termini Inglesi
-    'out', 
-    'injury report',
-    'day-to-day',
-    'sidelined',
+    # Termini Inglesi Comuni (Oltre a 'out')
+    'sidelined',        # Indica messo da parte, spesso per infortunio
+    'day-to-day',       # Indica valutazione quotidiana -> possibile assenza
+    'injury report',    # Nome del bollettino infortuni
 
-    # Roster changes (le tue originali - valuta se mantenerle o gestirle separatamente)
-    'acquisto', 
-    'cessione', 
-    'rinforzo', 
+    # Termini legati a interventi/diagnosi che *implicano* assenza
+    'operato', 'operazione', 'intervento', # Implicano un'assenza significativa
+    'esami', 'risonanza', 'ecografia',    # Spesso preludono a notizie su stop/tempi di recupero
 ]
 
 # Headers for web requests to mimic a browser
