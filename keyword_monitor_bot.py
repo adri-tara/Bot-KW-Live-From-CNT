@@ -19,8 +19,85 @@ logger = logging.getLogger(__name__)
 TOKEN = os.environ.get('BOT_TOKEN', '7799784006:AAE8qfnrz35poUJilU0_0gNONcylwqsKe7c')
 PRIMARY_CHANNEL_ID = os.environ.get('PRIMARY_CHANNEL_ID', '-1001805753779')
 SECONDARY_CHANNEL_ID = os.environ.get('SECONDARY_CHANNEL_ID', '-1002505814673')
-KEYWORDS = ['infortunio', 'infortuni', 'assenza', 'assenze', 'rottura', 'acquisto', 'cessione', 'rinforzo', 'problemi', 'problemi muscolari', 'acchiacchi', 'acciaccati', 'fermo ai box', 'fermo a causa', 
- 'assenti', 'assente']
+KEYWORDS = [
+    # Infortuni e problemi fisici
+    'infortunio', 'infortuni', 
+    'lesione', 'lesioni',
+    'distorsione', 'distorsioni',
+    'stiramento', 'stiramenti',
+    'contrattura', 'contratture',
+    'elongazione',
+    'affaticamento', 'affaticamenti',
+    'trauma', 'traumi',
+    'contusione', 'contusioni',
+    'rottura', 
+    'problemi', # Mantenuto, ma potrebbe essere generico
+    'problemi muscolari', 
+    'fastidio', 'fastidi',
+    'acciacco', 'acchiacchi', 
+    'acciaccato', 'acciaccati',
+    'acciaccatura', 'acciaccature',
+    'malanno', 'malanni',
+
+    # Assenza e indisponibilità
+    'assenza', 'assenze', 
+    'assente', 'assenti',
+    'indisponibile', 'indisponibili',
+    'non disponibile', 'non disponibili',
+    'fuori causa',
+    'fermo ai box', 
+    'fermo a causa',
+    'ai box',
+    'stop', # Aggiunto come termine generico per fermo
+    'costretto allo stop', 'costretto a fermarsi',
+
+    # Stato incerto / dubbio
+    'in dubbio',
+    'in forte dubbio',
+    'a rischio',
+    'valutato giorno per giorno', 'valutazione quotidiana',
+    'monitorato',
+    'non al meglio',
+    'condizione precaria',
+
+    # Verbi / Azioni di assenza
+    'saltare la partita', 'salta la partita', 'salterà la partita',
+    'mancare', 'mancherà', 'è mancato',
+    'fermarsi', 'si è fermato', 
+    'non sarà della partita',
+    'non prenderà parte',
+    'restare fuori',
+    
+    # Termini medici / Recupero
+    'operazione', 'intervento chirurgico',
+    'terapia', 'terapie',
+    'riabilitazione',
+    'recupero', 'tempi di recupero',
+    'visita medica', 'esami strumentali', 
+
+    # Altre cause di assenza
+    'influenza', 'stato influenzale',
+    'febbre',
+    'malattia',
+    'indisposizione',
+    'motivi personali', 'ragioni familiari',
+    'squalifica', 'squalificato',
+    'riposo', 'a riposo',
+    'turnover',
+    'scelta tecnica', 
+    'non convocato', 'escluso dai convocati',
+
+    # Termini Inglesi
+    'out', 
+    'injury report',
+    'day-to-day',
+    'sidelined',
+
+    # Roster changes (le tue originali - valuta se mantenerle o gestirle separatamente)
+    'acquisto', 
+    'cessione', 
+    'rinforzo', 
+]
 
 # Headers for web requests to mimic a browser
 HEADERS = {
