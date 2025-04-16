@@ -77,6 +77,148 @@ KEYWORDS = [
     # Termini legati a interventi/diagnosi che *implicano* assenza
     'operato', 'operazione', 'intervento', # Implicano un'assenza significativa
     'esami', 'risonanza', 'ecografia',    # Spesso preludono a notizie su stop/tempi di recupero
+
+    ### ESPAÑOL ###
+
+     # 1. Ausencia/Indisponibilidad General
+    'ausente', 'ausentes', 'ausencia', 'ausencias', # Absent / Absence
+    'lesión', 'lesiones', 'lesionado', 'lesionados', # Injury / Injured
+    'indisponible', 'indisponibles', 'no disponible', 'no disponibles', # Unavailable
+    'fuera', 'baja', 'KO', # Out / Unavailable / KO
+
+    # 2. Verbos Indicando Ausencia/Stop
+    'se pierde', 'se perderá', # Misses / Will miss (the game)
+    'falta', 'faltará', # Is missing / Will miss
+    'cae', 'se cae', 'caído', # Falls / Is dropped (from list)
+    'no juega', 'no jugará', # Doesn't play / Won't play
+    'no está', 'no estará', # Isn't / Won't be (available)
+    'baja para', # Out for (specific game/time)
+    'no convocado', 'fuera de la convocatoria', # Not selected / Out of the squad list
+
+    # 3. Estado de Paro / Stop
+    'parado', # Stopped / Sidelined
+    'stop', # Stop (less common than IT/EN, but used)
+    'en el dique seco', # Sidelined (idiom: in dry dock)
+
+    # 4. Problemas Físicos Específicos
+    'lesión', # Lesion / Injury
+    'distensión', # Strain
+    'esguince', # Sprain
+    'contractura', # Contracture
+    'problemas musculares', 'sobrecarga', # Muscle problems / Overload
+    'molestias', # Discomfort / Twinge (very common)
+    'rotura', # Tear / Rupture
+    'trauma', 'golpe', # Trauma / Knock
+    'dolencia', # Ailment
+
+    # 5. Estado de Duda / Riesgo Ausencia
+    'duda', 'en duda', 'seria duda', # Doubt / Doubtful / Serious doubt
+    'riesgo', # At risk
+    'pendiente de evolución', 'a evaluar', # Pending evaluation / To be assessed
+    'no al cien por cien', 'tocado', # Not 100% / Carrying a knock
+    'entre algodones', # Handled with care (idiom)
+
+    # 6. Otras Causas Específicas de Ausencia
+    'sanción', 'sancionado', 'sancionados', # Suspension / Suspended
+    'gripe', 'proceso gripal', 'fiebre', # Flu / Flu process / Fever
+    'enfermedad', # Illness
+
+    # 7. Términos Médicos/Diagnósticos
+    'operado', 'operación', 'intervención', 'quirófano', # Surgery / Operation / Operating room
+    'pruebas', 'resonancia', 'ecografía', 'chequeos', # Tests / Scans / Checks
+    'tratamiento', 'rehabilitación', 'recuperación', # Treatment / Rehab / Recovery
+
+    # 8. Reportes
+    'parte médico', # Medical report
+
+    # 9. Llegadas / Fichajes (Signings)
+    'fichaje', 'fichajes', 'nuevo fichaje', # Signing / New signing
+    'incorporación', 'refuerzo', # Addition / Reinforcement
+    'llegada', 'llegadas', # Arrival / Arrivals
+    'contratado', 'fichado', # Signed / Hired
+    'oficial', # Official (signing)
+    'firma', 'firmado', 'ha firmado', # Signs / Signed
+    'nuevo jugador', # New player
+    'se une a', 'llega desde', # Joins / Arrives from
+    'vestirá la camiseta', # Will wear the shirt
+    'presentado', 'presentación', # Presented / Presentation
+
+    # 10. Debuts / Estrenos
+    'debut', 'estreno', # Debut / Premiere
+    'debuta', 'debutará', 'se estrena', 'se estrenará', # Debuts / Will debut
+    'primera vez', 'primera aparición', # First time / First appearance
+    'listo para debutar', 'posible debut', # Ready for debut / Possible debut
+    'primera convocatoria', # First call-up
+
+    ### NEDERLANDS ###
+
+     # 1. Algemene Afwezigheid/Onbeschikbaarheid
+    'afwezig', 'afwezigheid', # Absent / Absence
+    'blessure', 'blessures', 'geblesseerd', # Injury / Injuries / Injured
+    'niet beschikbaar', 'onbeschikbaar', # Unavailable
+    'niet inzetbaar', # Not deployable/available
+    'out', 'uit de roulatie', # Out / Out of action
+
+    # 2. Werkwoorden die Afwezigheid/Stop aangeven
+    'mist', 'zal missen', # Misses / Will miss
+    'ontbreekt', 'ontbreken', # Is missing / Are missing
+    'speelt niet', 'zal niet spelen', # Doesn't play / Won't play
+    'is er niet bij', # Isn't there / Isn't available
+    'niet geselecteerd', 'buiten de selectie', # Not selected / Outside the squad
+
+    # 3. Status van Stilstand / Stop
+    'staat aan de kant', 'aan de kant', # Is sidelined / Sidelined
+    'stop', 'sidelined', # Stop / Sidelined (English terms used)
+
+    # 4. Specifieke Fysieke Problemen
+    'blessure', # Injury
+    'verrekking', # Strain
+    'verstuiking', 'verzwikking', # Sprain
+    'spierprobleem', 'spierklachten', # Muscle problem / Muscle complaints
+    'overbelasting', # Overload / Strain
+    'pijntje', 'klachten', # Minor ache / Complaints, symptoms
+    'scheur', 'scheurtje', # Tear / Small tear
+    'trauma', 'tik', 'klap', # Trauma / Knock
+    'kwetsuur', # Injury (slightly more formal)
+
+    # 5. Status van Twijfel / Risico Afwezigheid
+    'twijfelgeval', 'onzeker', # Doubtful case / Uncertain
+    'vraagteken', # Question mark
+    'niet fit', 'niet geheel fit', # Not fit / Not fully fit
+    'aangeslagen', # Affected / Slightly injured
+
+    # 6. Andere Specifieke Oorzaken van Afwezigheid
+    'schorsing', 'geschorst', # Suspension / Suspended
+    'griep', 'koorts', # Flu / Fever
+    'ziekte', 'ziek', # Illness / Sick
+
+    # 7. Medische/Diagnostische Termen
+    'geopereerd', 'operatie', 'ingreep', # Operated / Operation / Procedure
+    'onderzoek', 'scan', 'echo', 'controle', # Examination / Scan / Ultrasound / Check-up
+    'behandeling', 'revalidatie', 'herstel', # Treatment / Rehab / Recovery
+
+    # 8. Rapportage
+    'blessure-update', # Injury update
+
+    # 9. Aankomsten / Aanwinsten (Signings)
+    'aanwinst', 'aanwinsten', 'nieuwe aanwinst', # Signing / New signing
+    'transfer', 'overstap', # Transfer / Switch
+    'komst', # Arrival
+    'gecontracteerd', 'vastgelegd', # Contracted / Secured
+    'officieel', 'rond', # Official / Done deal
+    'tekent', 'getekend', 'handtekening', # Signs / Signed / Signature
+    'nieuwe speler', # New player
+    'komt over van', # Comes over from
+    'gaat spelen voor', # Will play for
+    'gepresenteerd', 'presentatie', # Presented / Presentation
+
+    # 10. Debuten / Eerste Optredens
+    'debuut', # Debut
+    'debuteert', 'zal debuteren', 'maakt zijn debuut', # Debuts / Will debut / Makes his debut
+    'eerste keer', 'eerste wedstrijd', # First time / First match
+    'klaar voor debuut', 'mogelijk debuut', # Ready for debut / Possible debut
+    'eerste selectie', # First squad selection
+    
 ]
 
 # Headers for web requests to mimic a browser
